@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9547AF1E-2A64-4FD3-9BE0-F7E8B827379A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>vcminer</RootNamespace>
+    <ProjectName>VCgminer</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>
+    </LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAs>Default</CompileAs>
+      <AdditionalIncludeDirectories>ccan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>lib;bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>pthreadVC2.lib;curllib.lib;curllib_static.lib;libOpenCL.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level1</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>ccan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>pthreadVC2.lib;curllib.lib;curllib_static.lib;libOpenCL.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>lib;bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <NoEntryPoint>false</NoEntryPoint>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <OptimizeReferences>false</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="bin\jansson.dll">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="bin\libeay32.dll">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="bin\libOpenCL.a" />
+    <None Include="bin\libsasl.dll">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="bin\openldap.dll">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="bin\pdcurses.ico">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="bin\pthreadVC2.dll">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="bin\ssleay32.dll">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="curl\libcurl.dll" />
+    <None Include="curl\libeay32.dll" />
+    <None Include="curl\libgcc_s_dw2-1.dll" />
+    <None Include="curl\libidn-11.dll" />
+    <None Include="curl\libpdcurses.dll" />
+    <None Include="curl\pthreadGC2.dll" />
+    <None Include="curl\ssleay32.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="adl.h" />
+    <ClInclude Include="adl_functions.h" />
+    <ClInclude Include="adl_sdk\adl_defines.h" />
+    <ClInclude Include="adl_sdk\adl_sdk.h" />
+    <ClInclude Include="adl_sdk\adl_structures.h" />
+    <ClInclude Include="arg-nonnull.h" />
+    <ClInclude Include="bench_block.h" />
+    <ClInclude Include="c++defs.h" />
+    <ClInclude Include="compat.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="curses.h" />
+    <ClInclude Include="driver-cpu.h" />
+    <ClInclude Include="driver-opencl.h" />
+    <ClInclude Include="elist.h" />
+    <ClInclude Include="findnonce.h" />
+    <ClInclude Include="GetTimeOfDay.h" />
+    <ClInclude Include="inttypes.h" />
+    <ClInclude Include="libgen.h" />
+    <ClInclude Include="logging.h" />
+    <ClInclude Include="miner.h" />
+    <ClInclude Include="pthread.h" />
+    <ClInclude Include="sched.h" />
+    <ClInclude Include="scrypt.h" />
+    <ClInclude Include="semaphore.h" />
+    <ClInclude Include="sha2.h" />
+    <ClInclude Include="stat.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="unistd.h" />
+    <ClInclude Include="uthash.h" />
+    <ClInclude Include="util.h" />
+    <ClInclude Include="warn-on-use.h" />
+    <ClInclude Include="_mingw.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="adl.c" />
+    <ClCompile Include="api.c" />
+    <ClCompile Include="basename.c" />
+    <ClCompile Include="ccan\opt\helpers.c" />
+    <ClCompile Include="ccan\opt\opt.c" />
+    <ClCompile Include="ccan\opt\parse.c" />
+    <ClCompile Include="ccan\opt\usage.c" />
+    <ClCompile Include="cgminer.c" />
+    <ClCompile Include="driver-cpu.c" />
+    <ClCompile Include="driver-opencl.c" />
+    <ClCompile Include="findnonce.c" />
+    <ClCompile Include="GetTimeOfDay.c" />
+    <ClCompile Include="logging.c" />
+    <ClCompile Include="ocl.c" />
+    <ClCompile Include="scrypt.c" />
+    <ClCompile Include="sha2.c" />
+    <ClCompile Include="sha256_4way.c" />
+    <ClCompile Include="sha256_altivec_4way.c" />
+    <ClCompile Include="sha256_cryptopp.c" />
+    <ClCompile Include="sha256_generic.c" />
+    <ClCompile Include="sha256_sse2_amd64.c" />
+    <ClCompile Include="sha256_sse2_i386.c" />
+    <ClCompile Include="sha256_sse4_amd64.c" />
+    <ClCompile Include="sha256_via.c" />
+    <ClCompile Include="stdafx.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="unistd.c" />
+    <ClCompile Include="util.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="bin\curllib.lib" />
+    <Library Include="bin\curllib_static.lib" />
+    <Library Include="bin\jansson.lib" />
+    <Library Include="bin\panel.lib" />
+    <Library Include="bin\pdcurses.lib" />
+    <Library Include="bin\pthreadVC2.lib" />
+    <Library Include="bin\WS2_32.Lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="bin\pdcurses.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
